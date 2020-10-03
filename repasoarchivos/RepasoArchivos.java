@@ -5,6 +5,8 @@
  */
 package repasoarchivos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Xavier
@@ -16,6 +18,39 @@ public class RepasoArchivos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc;
+        String path,nomb;
+        sc=new Scanner(System.in);
+        System.out.println("Introducir un path absoluto:");
+        path=sc.nextLine();
+        if(CArchivo.esDirectorio(path)){
+            System.out.println("Es directorio");
+        }else{
+            System.out.println("No es directorio");
+        }
+        if(CArchivo.esArchivo(path)){
+            System.out.println("Es Archivo");
+        }else{
+            System.out.println("No es Archivo");
+        }
+        System.out.println("------------------");
+        System.out.println("crear directorios y archivos");
+        /*System.out.println("Introducir una direccion para crear un directorio");
+        path=sc.nextLine();
+        if(CArchivo.crearDirectorio(path)){
+            System.out.println("Directorio creado");
+        }else{
+            System.out.println("Directorio no creado");
+        }*/
+        System.out.println("Introducir una direccion para crear un archivo");
+        path=sc.nextLine();
+        System.out.println("Introducir nombre del nuevo archivo");
+        nomb=sc.nextLine();
+        if(CArchivo.crearArchivo(path, nomb)){
+            System.out.println("Archivo creado");
+        }else{
+            System.out.println("Archivo no creado");
+        }
     }
     
 }
