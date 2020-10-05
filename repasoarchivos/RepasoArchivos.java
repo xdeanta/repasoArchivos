@@ -21,7 +21,7 @@ public class RepasoArchivos {
         Scanner sc;
         String path,nomb;
         sc=new Scanner(System.in);
-        /*System.out.println("Introducir un path absoluto:");
+        System.out.println("Introducir un path absoluto:");
         path=sc.nextLine();
         if(CArchivo.esDirectorio(path)){
             System.out.println("Es directorio");
@@ -34,8 +34,8 @@ public class RepasoArchivos {
             System.out.println("No es Archivo");
         }
         System.out.println("------------------");
-        System.out.println("crear directorios y archivos");*/
-        /*System.out.println("Introducir una direccion para crear un directorio");
+        System.out.println("crear directorios y archivos");
+        System.out.println("Introducir una direccion para crear un directorio");
         path=sc.nextLine();
         if(CArchivo.crearDirectorio(path)){
             System.out.println("Directorio creado");
@@ -50,9 +50,9 @@ public class RepasoArchivos {
             System.out.println("Archivo creado");
         }else{
             System.out.println("Archivo no creado");
-        }*/
+        }
         
-        /*System.out.println("------------------");
+        System.out.println("------------------");
         System.out.println("permisos a archivos");
         System.out.println("Introducir una direccion:");
         path=sc.nextLine();
@@ -67,8 +67,8 @@ public class RepasoArchivos {
         System.out.println("mEscritura:");
         CArchivo.mEscritura(path, nomb);
         System.out.println("Permisos mEscritura");
-        CArchivo.modoAcceso(path, nomb);*/
-        /*
+        CArchivo.modoAcceso(path, nomb);
+        
         System.out.println("-----Borrar Archivo-----");
         System.out.println("Introducir una direccion:");
         path=sc.nextLine();
@@ -76,6 +76,6 @@ public class RepasoArchivos {
         nomb=sc.nextLine();
         CArchivo.borrarArchivo(path, nomb);
         CArchivo.mostrarDirectorio(path);
-        CArchivo.borrarDirectorio(path);*/
+        CArchivo.borrarDirectorio(path);
     }
 }
