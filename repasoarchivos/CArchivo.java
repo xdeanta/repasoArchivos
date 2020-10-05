@@ -152,4 +152,17 @@ public class CArchivo {
             }
         }
     }
+    
+    public static long calcularLongitud(String path, String Nombre){
+        File pDir, fnomb;
+        long tam=-1;
+        pDir=new File(path);
+        if(pDir.exists() && pDir.isDirectory()){
+            fnomb=new File(path + File.separator + Nombre);
+            if(fnomb.exists() && fnomb.isFile()){
+                tam=fnomb.length();
+            }
+        }
+        return tam;
+    }
 }

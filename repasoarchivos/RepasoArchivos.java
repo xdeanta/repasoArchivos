@@ -21,7 +21,7 @@ public class RepasoArchivos {
         Scanner sc;
         String path,nomb;
         sc=new Scanner(System.in);
-        System.out.println("Introducir un path absoluto:");
+        System.out.println("Introducir una ruta absoluta:");
         path=sc.nextLine();
         if(CArchivo.esDirectorio(path)){
             System.out.println("Es directorio");
@@ -42,8 +42,6 @@ public class RepasoArchivos {
         }else{
             System.out.println("Directorio no creado");
         }
-        System.out.println("Introducir una direccion para crear un archivo");
-        path=sc.nextLine();
         System.out.println("Introducir nombre del nuevo archivo");
         nomb=sc.nextLine();
         if(CArchivo.crearArchivo(path, nomb)){
@@ -54,7 +52,7 @@ public class RepasoArchivos {
         
         System.out.println("------------------");
         System.out.println("permisos a archivos");
-        System.out.println("Introducir una direccion:");
+        System.out.println("Introducir un path absoluto:");
         path=sc.nextLine();
         System.out.println("Introducir nombre del archivo");
         nomb=sc.nextLine();
@@ -68,6 +66,7 @@ public class RepasoArchivos {
         CArchivo.mEscritura(path, nomb);
         System.out.println("Permisos mEscritura");
         CArchivo.modoAcceso(path, nomb);
+        System.out.println("Tamano: " + CArchivo.calcularLongitud(path, nomb));
         
         System.out.println("-----Borrar Archivo-----");
         System.out.println("Introducir una direccion:");
