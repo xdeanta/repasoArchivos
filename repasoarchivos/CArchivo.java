@@ -65,4 +65,91 @@ public class CArchivo {
         }
         return creado;
     }
+    public static void modoAcceso(String path, String Nombre){
+        File fpath, fnomb;
+        fpath=new File(path);
+        if(fpath.exists() && fpath.isDirectory()){
+            fnomb=new File(path + File.separator + Nombre);
+            if(fnomb.exists() && fnomb.isFile()){
+                System.out.print("Lectura:");
+                if(fnomb.canRead()){
+                    System.out.println(" SI");
+                }else{
+                    System.out.println(" NO");
+                }
+                System.out.print("Escritura:");
+                if(fnomb.canWrite()){
+                    System.out.println(" SI");
+                }else{
+                    System.out.println(" NO");
+                }
+            }
+        }
+    }
+    
+    public static void mLectura(String path, String Nombre){
+        File fpath, fnomb;
+        fpath=new File(path);
+        if(fpath.exists() && fpath.isDirectory()){
+            fnomb=new File(path + File.separator + Nombre);
+            if(fnomb.exists() && fnomb.isFile()){
+                if(fnomb.setReadOnly()){
+                    System.out.println(fnomb.getName() + " Es de solo lectura");
+                }
+            }
+        }
+    }
+    
+    public static void mEscritura(String path, String Nombre){
+        File fpath, fnomb;
+        fpath=new File(path);
+        if(fpath.exists() && fpath.isDirectory()){
+            fnomb=new File(path + File.separator + Nombre);
+            if(fnomb.exists() && fnomb.isFile()){
+                if(!fnomb.canWrite()){
+                    if(fnomb.setWritable(true)){
+                        System.out.println(fnomb.getName() + " Se puede escribir");
+                    }
+                }else{
+                    System.out.println("Ya tiene permiso de escritura");
+                }
+            }
+        }
+    }
+    
+    public static void borrarArchivo(String path, String nombre){
+        File pFile, nomb;
+        pFile=new File(path);
+        if(pFile.exists() && pFile.isDirectory()){
+            nomb=new File(path + File.separator + nombre);
+            if(nomb.exists()){
+                if(nomb.delete()){
+                    System.out.println("Archivo Borrado");
+                }
+            }else{
+                System.out.println("El archivo no existe");
+            }
+        }
+    }
+    public static void mostrarDirectorio(String path){
+        File pDir;
+        //String nomb;
+        pDir=new File(path);
+        if(pDir.exists() && pDir.isDirectory()){
+            for(String nomb : pDir.list()){
+                System.out.println(nomb);
+            }
+        }
+    }
+    
+    public static void borrarDirectorio(String path){
+        File pDir;
+        //String nomb;
+        pDir=new File(path);
+        if(pDir.exists() && pDir.isDirectory()){
+            if(pDir.delete()){
+                System.out.println("Directorio borrado");
+            }
+        }
+    }
 }
